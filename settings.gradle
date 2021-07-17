@@ -1,0 +1,2 @@
+rootProject.name = "retribusi-android"
+include ':app'
