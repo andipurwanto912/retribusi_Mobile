@@ -14,5 +14,8 @@ import andi.purwanto.retribusi_android.utilities.Constants
 import com.google.gson.Gson
 
 class ProfileActivity : AppCompatActivity() {
-
+     override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_profile)
+        }
 }
