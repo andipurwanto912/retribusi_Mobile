@@ -177,7 +177,7 @@
                 android:background="@drawable/bg_button">
 
                 <ImageView
-                    android:id="@+id/byr"
+                    android:id="@+id/bayar"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -291,7 +291,7 @@
                 android:background="@drawable/bg_button">
 
                 <ImageView
-                    android:id="@+id/profilee"
+                    android:id="@+id/profile"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -303,17 +303,17 @@
                     app:srcCompat="@mipmap/user" />
 
                 <TextView
-                    android:id="@+id/series"
-                    android:layout_marginTop="8dp"
+                    android:id="@+id/profilee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="serif"
                     android:text="Profile"
                     android:textColor="#000000"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/profilee"
-                    app:layout_constraintStart_toStartOf="@+id/profilee"
-                    app:layout_constraintTop_toBottomOf="@+id/profilee" />
+                    app:layout_constraintEnd_toEndOf="@+id/profile"
+                    app:layout_constraintStart_toStartOf="@+id/profile"
+                    app:layout_constraintTop_toBottomOf="@+id/profile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>
