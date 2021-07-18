@@ -53,9 +53,6 @@
                 android:layout_height="wrap_content"
                 android:text="Jalan Margadana, gang Tegal"
                 android:textSize="16sp"/>
-
-
-
         </LinearLayout>
 
     </LinearLayout>

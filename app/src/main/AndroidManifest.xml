@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MasyarakatActivity"></activity>
+        <activity android:name=".TransaksiActivity"></activity>
+        <activity android:name=".MasyarakatActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity
