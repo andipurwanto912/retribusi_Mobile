@@ -10,21 +10,22 @@ import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenuActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var imageviewIntent: ImageView
+    private lateinit var imageViewProfile: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        imageviewIntent = findViewById(R.id.profile)
-        imageviewIntent.setOnClickListener(this)
+        imageViewProfile = findViewById(R.id.profile)
+        imageViewProfile.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View) {
         when(v.id){
             R.id.profile->{
-                val intentProfileActivity = Intent(this@MainMenuActivity, ProfileActivity::class.java)
-            startActivity(intentProfileActivity)
+                val intenProfileActivity = Intent(this@MainMenuActivity, ProfileActivity::class.java)
+                startActivity(intenProfileActivity)
             }
         }
     }
