@@ -1,6 +1,7 @@
 package andi.purwanto.retribusi_android.webservices
 
 import andi.purwanto.retribusi_android.models.Masyarakat
+import andi.purwanto.retribusi_android.models.Riwayat
 import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.models.User
 import andi.purwanto.retribusi_android.responses.WrappedListResponse
@@ -32,4 +33,10 @@ interface APIService {
         @Header("Authorization") token : String,
         @Header("RS-API-KEY") rsapikey: String
     ) : Call<WrappedListResponse<Seri>>
+
+    @GET ("api/transaksi/transaksi")
+    fun getRiwayat(
+        @Header("Authorization") token : String,
+        @Header("RS-API-KEY") rsapikey: String
+    ) : Call<WrappedListResponse<Riwayat>>
 }
