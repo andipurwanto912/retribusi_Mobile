@@ -14,10 +14,10 @@
     </ProgressBar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/riwayat"
+        android:id="@+id/tagihan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        tools:listitem="@layout/list_item_riwayat"/>
+        tools:listitem="@layout/list_item_riwayat" />
 
 </FrameLayout>

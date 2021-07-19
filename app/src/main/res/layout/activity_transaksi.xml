@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".TransaksiActivity">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="270dp"
-        android:layout_height="62dp"
-        android:background="@drawable/ic_menu"
-        android:text="Pembayaran"
-        android:fontFamily="serif"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
@@ -28,7 +14,9 @@
         android:background="@drawable/bg_dashboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -188,6 +176,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_form"
                 android:ems="10"
+                android:text="Rp. "
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
                 android:hint="Rp. 00000000"
@@ -195,11 +184,11 @@
                 android:padding="10dp" />
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="#00FFFFFF">
+            >
 
             <Button
                 android:id="@+id/btn_transaksi"
@@ -210,7 +199,23 @@
                 android:text="Bayar"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/button6"
+        android:layout_width="270dp"
+        android:layout_height="62dp"
+        android:background="@drawable/ic_menu"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="PEMBAYARAN"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
