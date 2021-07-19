@@ -1,26 +1,26 @@
 package andi.purwanto.retribusi_android.presenters
 
-import andi.purwanto.retribusi_android.contracts.MasyarakatActivityContract
-import andi.purwanto.retribusi_android.models.Masyarakat
+import andi.purwanto.retribusi_android.contracts.SeriActivityContract
+import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.responses.WrappedListResponse
 import andi.purwanto.retribusi_android.utilities.APIClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MasyarakatActivityPresenter(v : MasyarakatActivityContract.MasyarakatView?) : MasyarakatActivityContract.MasyarakatPresenter {
+class SeriActivityPresenter(v : SeriActivityContract.SeriView?) : SeriActivityContract.SeriPresenter {
 
-    private var view : MasyarakatActivityContract.MasyarakatView? = v
+    private var view : SeriActivityContract.SeriView? = v
 
     private var apiService = APIClient.APIService()
 
-    override fun getMasyarakat(token: String, rsapikey: String) {
-        val request = apiService.getMasyarakat(token, rsapikey)
+    override fun getSeri(token: String, rsapikey: String) {
+        val request = apiService.getSeri(token, rsapikey)
         view?.showLoading()
-        request.enqueue(object : Callback<WrappedListResponse<Masyarakat>> {
+        request.enqueue(object : Callback<WrappedListResponse<Seri>> {
             override fun onResponse(
-                call: Call<WrappedListResponse<Masyarakat>>,
-                response: Response<WrappedListResponse<Masyarakat>>
+                call: Call<WrappedListResponse<Seri>>,
+                response: Response<WrappedListResponse<Seri>>
             ) {
                 println("RESPONSE " + response)
                 if(response.isSuccessful){
@@ -38,7 +38,7 @@ class MasyarakatActivityPresenter(v : MasyarakatActivityContract.MasyarakatView?
                 }
             }
 
-            override fun onFailure(call: Call<WrappedListResponse<Masyarakat>>, t: Throwable) {
+            override fun onFailure(call: Call<WrappedListResponse<Seri>>, t: Throwable) {
                 view?.showToast("Tidak bisa koneksi ke server")
                 view?.hideLoading()
                 println(t.message)

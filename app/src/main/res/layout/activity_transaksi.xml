@@ -76,7 +76,7 @@
                 android:ems="10"
                 android:fontFamily="serif"
                 android:hint="masukan nik (332xxxxxxxx)"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:padding="10dp"
                 android:paddingLeft="10dp" />
         </androidx.cardview.widget.CardView>

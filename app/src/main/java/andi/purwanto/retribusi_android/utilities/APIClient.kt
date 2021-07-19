@@ -30,6 +30,7 @@ class APIClient {
 class Constants {
     companion object {
         const val API_ENDPOINT = "http://retribusisampah.xyz/retribusi/"
+        const val BASIC_AUTH = "Basic YWRtaW46MTIzNA=="
 
         fun getToken(c : Context) : String {
             val s = c.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
