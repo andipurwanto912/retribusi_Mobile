@@ -3,10 +3,8 @@ package andi.purwanto.retribusi_android
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import andi.purwanto.retribusi_android.contracts.LoginActivityContract
 import andi.purwanto.retribusi_android.models.User
 import andi.purwanto.retribusi_android.utilities.Constants
-import android.app.Activity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_profile.*
 

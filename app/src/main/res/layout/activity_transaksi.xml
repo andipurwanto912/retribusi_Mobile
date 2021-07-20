@@ -14,11 +14,21 @@
         android:background="@drawable/bg_dashboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ProgressBar
+            android:id="@+id/loadingTransaksi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -107,60 +117,81 @@
                 android:paddingLeft="10dp" />
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_form">
 
-            <EditText
-                android:id="@+id/et_kelurahan"
+            <Spinner
+                android:id="@+id/spinnerKecamatan"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/ic_form"
-                android:drawableStart="@drawable/ic_baseline_home_work_24"
-                android:ems="10"
-                android:fontFamily="serif"
-                android:hint="masukan kelurahan"
-                android:inputType="textPersonName"
-                android:padding="10dp"
-                android:paddingLeft="10dp" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content" />
 
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_form">
 
-            <EditText
-                android:id="@+id/et_kecamatan"
+            <Spinner
+                android:id="@+id/spinnerKelurahan"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/ic_form"
-                android:drawableStart="@drawable/ic_baseline_location_city_24"
-                android:ems="10"
-                android:fontFamily="serif"
-                android:hint="masukan kecamatan"
-                android:inputType="textPersonName"
-                android:padding="10dp" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content" />
 
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_form">
 
-            <EditText
-                android:id="@+id/et_seri"
+            <Spinner
+                android:id="@+id/spinnerSeri"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_form"
-                android:drawableStart="@drawable/ic_baseline_monetization_on_24"
-                android:ems="10"
-                android:fontFamily="serif"
-                android:hint="masukan seri"
-                android:inputType="textPersonName"
-                android:padding="10dp" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="10dp">-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/et_kelurahan"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:background="@drawable/ic_form"-->
+        <!--                android:drawableStart="@drawable/ic_baseline_home_work_24"-->
+        <!--                android:ems="10"-->
+        <!--                android:fontFamily="serif"-->
+        <!--                android:hint="masukan kelurahan"-->
+        <!--                android:inputType="textPersonName"-->
+        <!--                android:padding="10dp"-->
+        <!--                android:paddingLeft="10dp" />-->
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="10dp">-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/et_kecamatan"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:background="@drawable/ic_form"-->
+        <!--                android:drawableStart="@drawable/ic_baseline_location_city_24"-->
+        <!--                android:ems="10"-->
+        <!--                android:fontFamily="serif"-->
+        <!--                android:hint="masukan kecamatan"-->
+        <!--                android:inputType="textPersonName"-->
+        <!--                android:padding="10dp" />-->
+        <!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -168,7 +199,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
-            android:padding="10dp" >
+            android:padding="10dp">
 
             <EditText
                 android:id="@+id/et_bayar"
@@ -176,19 +207,18 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_form"
                 android:ems="10"
-                android:text="Rp. "
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
                 android:hint="Rp. 00000000"
                 android:inputType="number"
-                android:padding="10dp" />
+                android:padding="10dp"
+                />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            >
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/btn_transaksi"

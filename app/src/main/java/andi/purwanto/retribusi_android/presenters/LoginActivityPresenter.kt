@@ -44,7 +44,6 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginView) : LoginActivit
                 }else{
                     view?.hideLoading()
                     view?.showToast("Something went wrong, try again later")
-//                    println(response)
                 }
             }
         })

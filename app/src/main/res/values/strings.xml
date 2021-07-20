@@ -2,4 +2,30 @@
     <string name="app_name">Retribusi</string>
     <string name="subjudul">Silakan Login dengan email dan password yang sudah didaftar oleh admin/petugas Hidup Kota Tegal</string>
     <string name="no_akun">Belum punya akun? Silakan Hubungin admin/petugas Dinas Lingkungan Hidup</string>
+    <string-array name="kelurahan">
+        <item>Pilih Kelurahan</item>
+        <item>Kejambon</item>
+        <item>Mangkukusuman</item>
+        <item>Mintaragen</item>
+        <item>Panggung</item>
+        <item>Slerok</item>
+    </string-array>
+
+    <string-array name="kecamatan">
+        <item>
+            Pilih Kecamatan
+        </item>
+        <item>Tegal Timur</item>
+    </string-array>
+
+    <string-array name="seri">
+        <item>Pilih Seri</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+    </string-array>
 </resources>

@@ -39,4 +39,19 @@ interface APIService {
         @Header("Authorization") token : String,
         @Header("RS-API-KEY") rsapikey: String
     ) : Call<WrappedListResponse<Riwayat>>
+
+    @FormUrlEncoded
+    @POST("api/transaksi/transaksi")
+    fun postPembayaran(
+        @Header("Authorization") token : String,
+        @Header("RS-API-KEY") rsapikey: String,
+        @Field("bulan") bulan : String,
+        @Field("nik") nik : String,
+        @Field("nama_lengkap") nama_lengkap : String,
+        @Field("alamat") alamat : String,
+        @Field("kelurahan") kelurahan : String,
+        @Field("kecamatan") kecamatan : String,
+        @Field("seri") seri : String,
+        @Field("jml_bayar") jml_bayar : String,
+    ) : Call<WrappedResponse<String>>
 }
