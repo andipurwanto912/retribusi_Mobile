@@ -210,7 +210,7 @@
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
                 android:hint="Rp. 00000000"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:padding="10dp"
                 />
         </androidx.cardview.widget.CardView>

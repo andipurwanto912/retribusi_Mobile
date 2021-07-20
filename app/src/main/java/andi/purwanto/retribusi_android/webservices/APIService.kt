@@ -28,6 +28,13 @@ interface APIService {
         @Header("RS-API-KEY") rsapikey : String
     ) : Call<WrappedListResponse<Masyarakat>>
 
+    @GET("api/masyarakat/nik")
+    fun getMasyarakatByNik(
+        @Header("Authorization") token : String,
+        @Header("RS-API-KEY") rsapikey : String,
+        @Query("nik") nik : String,
+    ) : Call<WrappedListResponse<Masyarakat>>
+
     @GET ("api/seri/seri")
     fun getSeri(
         @Header("Authorization") token : String,

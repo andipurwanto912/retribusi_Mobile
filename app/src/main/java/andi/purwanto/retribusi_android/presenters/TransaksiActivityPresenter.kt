@@ -1,6 +1,8 @@
 package andi.purwanto.retribusi_android.presenters
 
 import andi.purwanto.retribusi_android.contracts.TransaksiContract
+import andi.purwanto.retribusi_android.models.Masyarakat
+import andi.purwanto.retribusi_android.responses.WrappedListResponse
 import andi.purwanto.retribusi_android.responses.WrappedResponse
 import andi.purwanto.retribusi_android.utilities.APIClient
 import retrofit2.Call
@@ -49,6 +51,31 @@ class TransaksiActivityPresenter(v: TransaksiContract.TransaksiView?) : Transaks
                 view?.showToast("Tidak bisa koneksi ke server")
                 println(t.message)
                 view?.hideLoading()
+            }
+
+        })
+    }
+
+    override fun getMasyarakatByNik(token: String, rsapikey: String, nik: String) {
+        val request = apiService.getMasyarakatByNik(token, rsapikey, nik)
+        request.enqueue(object : Callback<WrappedListResponse<Masyarakat>>{
+            override fun onResponse(
+                call: Call<WrappedListResponse<Masyarakat>>,
+                response: Response<WrappedListResponse<Masyarakat>>
+            ) {
+                if(response.isSuccessful){
+                    val body = response.body()
+                    if (body != null){
+                        view?.fill(body.data)
+                    }
+                }else{
+                    view?.showToast(response.message())
+                }
+            }
+
+            override fun onFailure(call: Call<WrappedListResponse<Masyarakat>>, t: Throwable) {
+                view?.showToast("Tidak bisa koneksi ke server")
+                println(t.message)
             }
 
         })

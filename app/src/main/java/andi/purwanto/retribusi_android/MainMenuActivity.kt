@@ -40,7 +40,7 @@ class MainMenuActivity : AppCompatActivity(){
 
     private fun pindahActivity(){
         binding.btnBarcode.setOnClickListener {
-            Toast.makeText(this@MainMenuActivity, "Under develop", Toast.LENGTH_LONG).show()
+            startActivity(Intent(this@MainMenuActivity, BarcodeActivity::class.java))
 //            startActivity(Intent(this@MainMenuActivity, Barco))
         }
 
