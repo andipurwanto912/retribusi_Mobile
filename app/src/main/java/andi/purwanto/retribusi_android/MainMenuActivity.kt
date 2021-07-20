@@ -1,6 +1,7 @@
 package andi.purwanto.retribusi_android
 
 import andi.purwanto.retribusi_android.databinding.ActivityMainMenuBinding
+import andi.purwanto.retribusi_android.utilities.Constants
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +21,7 @@ class MainMenuActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        checkLogin()
 //        setContentView(R.layout.activity_main_menu)
 
 //        imageViewProfile = findViewById(R.id.profile)
@@ -61,5 +63,15 @@ class MainMenuActivity : AppCompatActivity(){
         binding.btnRiwayat.setOnClickListener {
             startActivity(Intent(this@MainMenuActivity, RiwayatActivity::class.java))
         }
+    }
+
+    private fun checkLogin(){
+        val token = Constants.getToken(this@MainMenuActivity)
+        if(token == null || token.equals("UNDEFINED")){
+            var intentToLogin = Intent(this@MainMenuActivity, LoginActivity::class.java).also{finish()}
+
+            startActivity(intentToLogin)
+        }
+
     }
 }
