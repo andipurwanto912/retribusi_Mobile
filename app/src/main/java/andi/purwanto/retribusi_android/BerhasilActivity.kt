@@ -1,6 +1,7 @@
 package andi.purwanto.retribusi_android
 
 import andi.purwanto.retribusi_android.databinding.ActivityBerhasilBinding
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -13,6 +14,7 @@ class BerhasilActivity : AppCompatActivity() {
         binding = ActivityBerhasilBinding.inflate(layoutInflater)
         setContentView(binding.root)
         parseTotal()
+        BackMainMenuActivity()
     }
 
     private fun getName() : String? = intent.getStringExtra("NAMA")
@@ -21,5 +23,12 @@ class BerhasilActivity : AppCompatActivity() {
     private fun parseTotal() {
         binding.tvBayar.text = getTotal()
         binding.tvNames.text = getName()
+    }
+
+    private fun BackMainMenuActivity() {
+        binding.backMenu.setOnClickListener {
+            startActivity(Intent(this@BerhasilActivity, MainMenuActivity::class.java))
+//            startActivity(Intent(this@MainMenuActivity, Barco))
+        }
     }
 }

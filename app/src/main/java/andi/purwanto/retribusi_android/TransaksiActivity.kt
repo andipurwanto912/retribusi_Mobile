@@ -41,6 +41,12 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         doSave()
     }
 
+    private fun validate(){
+        if (binding.etBulan.text.toString().isEmpty()){
+            binding.errorTanggal.text = "Bulan harus diisi"
+        }
+    }
+
     private fun getItScan() : Boolean = intent.getBooleanExtra("ITS_SCAN", false)
 
     private fun getData(){
@@ -55,6 +61,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
     private fun doSave(){
         binding.btnTransaksi.setOnClickListener {
             showLoading()
+            validate()
             val basicAtuh = Constants.BASIC_AUTH
             val token = Constants.getToken(this)
             val bulan = binding.etBulan.text.toString()
