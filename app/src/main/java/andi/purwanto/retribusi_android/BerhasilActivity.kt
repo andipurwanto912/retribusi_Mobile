@@ -28,7 +28,7 @@ class BerhasilActivity : AppCompatActivity() {
     private fun BackMainMenuActivity() {
         binding.backMenu.setOnClickListener {
             startActivity(Intent(this@BerhasilActivity, MainMenuActivity::class.java))
-//            startActivity(Intent(this@MainMenuActivity, Barco))
+            finishAffinity()
         }
     }
 }

@@ -43,7 +43,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
     private fun validate(){
         if (binding.etBulan.text.toString().isEmpty()){
-            binding.errorTanggal.text = "Bulan harus diisi"
+//            binding.errorTanggal.text = "Bulan harus diisi"
         }
     }
 
