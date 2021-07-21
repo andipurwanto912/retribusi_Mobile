@@ -39,6 +39,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         setupSpinnerSeri()
         setContentView(binding.root)
         doSave()
+        BackMainMenuActivity()
     }
 
     private fun validate(){
@@ -99,6 +100,14 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         ))
 
         binding.spinnerSeri.adapter = spinnerSeriAdapter
+    }
+
+    private fun BackMainMenuActivity() {
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this@TransaksiActivity, MainMenuActivity::class.java))
+//            startActivity(Intent(this@MainMenuActivity, Barco))
+            finishAffinity()
+        }
     }
 
     override fun showToast(message: String) {

@@ -77,7 +77,7 @@
         android:id="@+id/backMenu"
         android:layout_width="229dp"
         android:layout_height="47dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="#F44336"
         android:fontFamily="serif"
         android:text="BACK HOME"
         android:textColor="#FFFFFF"

@@ -199,23 +199,25 @@
         <!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:layout_gravity="center"
+            >
 
             <EditText
                 android:id="@+id/et_bayar"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_form"
                 android:ems="10"
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
                 android:hint="Rp. 00000000"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:padding="10dp"
                 />
         </androidx.cardview.widget.CardView>
@@ -223,19 +225,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn_transaksi"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/round_bottom"
+                android:background="@color/colorPrimary"
                 android:fontFamily="serif"
                 android:text="Bayar"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#F44336"
+                android:gravity="center_vertical|center_horizontal"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:text="BACK HOME"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
