@@ -17,6 +17,7 @@
         <TextView
             android:id="@+id/tvSeriP"
             android:fontFamily="serif"
+            android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50sp"
             android:textStyle="bold"
@@ -37,6 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="serif"
                 android:textSize="20sp"
                 android:text="202021"/>
 
@@ -45,12 +48,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Andi Purwanto"
+                android:textColor="@color/black"
+                android:fontFamily="serif"
                 android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/tvJmlbayar"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="serif"
                 android:text="Rp. 000000"
                 android:textSize="16sp"/>
         </LinearLayout>

@@ -17,6 +17,7 @@
         <TextView
             android:id="@+id/tvSeri"
             android:fontFamily="serif"
+            android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50sp"
             android:textStyle="bold"
@@ -37,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:text="33245647857976783"/>
 
@@ -45,12 +47,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Andi Purwanto"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/tvAlamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="Jalan Margadana, gang Tegal"
                 android:textSize="16sp"/>
         </LinearLayout>

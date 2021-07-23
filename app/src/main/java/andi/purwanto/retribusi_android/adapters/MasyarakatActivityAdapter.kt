@@ -16,7 +16,7 @@ class MasyarakatActivityAdapter(private var masyarakat : List<Masyarakat>, priva
             itemView.tvSeri.text = masyarakat.seri
             itemView.tvNama.text = masyarakat.nama_lengkap
             itemView.tvNIK.text = masyarakat.nik
-            itemView.tvAlamat.text = masyarakat.kecamatan
+            itemView.tvAlamat.text = masyarakat.alamat
         }
 
     }

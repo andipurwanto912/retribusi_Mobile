@@ -17,6 +17,7 @@
 
         <TextView
             android:id="@+id/tvSeriA"
+            android:textColor="@color/black"
             android:fontFamily="serif"
             android:textAlignment="center"
             android:textSize="50sp"
@@ -53,6 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="serif"
+                android:textColor="@color/black"
                 android:gravity="center|fill_horizontal"
                 android:text="Rp. 100.000"
                 android:textAlignment="center"

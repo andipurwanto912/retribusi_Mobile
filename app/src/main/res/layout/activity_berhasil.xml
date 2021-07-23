@@ -10,7 +10,8 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="@drawable/bg_dashboard">
+        android:background="@drawable/bg_dashboard"
+        tools:ignore="MissingConstraints">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

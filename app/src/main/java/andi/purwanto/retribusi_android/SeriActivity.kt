@@ -27,7 +27,7 @@ class SeriActivity : AppCompatActivity(), SeriActivityContract.SeriView {
 
     override fun attachToRecycler(seri: List<Seri>) {
         adapterSeri = SeriActivityAdapter(seri, this@SeriActivity)
-        binding.tagihan.apply {
+        binding.seri.apply {
             adapter = adapterSeri
             layoutManager = LinearLayoutManager(this@SeriActivity)
         }

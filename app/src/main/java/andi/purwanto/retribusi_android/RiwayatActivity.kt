@@ -2,6 +2,7 @@ package andi.purwanto.retribusi_android
 
 import andi.purwanto.retribusi_android.adapters.RiwayatActivityAdapater
 import andi.purwanto.retribusi_android.contracts.RiwayatActivityContract
+import andi.purwanto.retribusi_android.databinding.ActivityRiwayatBinding
 import andi.purwanto.retribusi_android.databinding.ActivitySeriBinding
 import andi.purwanto.retribusi_android.models.Riwayat
 import andi.purwanto.retribusi_android.presenters.RiwayatActivityPresenter
@@ -14,20 +15,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 class RiwayatActivity : AppCompatActivity(), RiwayatActivityContract.RiwayatView {
 
-    private lateinit var binding : ActivitySeriBinding
+    private lateinit var binding : ActivityRiwayatBinding
     private var presenter : RiwayatActivityContract.RiwayatPresenter? = null
     private lateinit var adapterRiwayat : RiwayatActivityAdapater
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySeriBinding.inflate(layoutInflater)
+        binding = ActivityRiwayatBinding.inflate(layoutInflater)
         presenter = RiwayatActivityPresenter(this)
         setContentView(binding.root)
     }
 
-    override fun attachToRecycler(seri: List<Riwayat>) {
-        adapterRiwayat = RiwayatActivityAdapater(seri, this@RiwayatActivity)
-        binding.tagihan.apply {
+    override fun attachToRecycler(riwayat: List<Riwayat>) {
+        adapterRiwayat = RiwayatActivityAdapater(riwayat, this@RiwayatActivity)
+        binding.tbriwayat.apply {
             adapter = adapterRiwayat
             layoutManager = LinearLayoutManager(this@RiwayatActivity)
         }
