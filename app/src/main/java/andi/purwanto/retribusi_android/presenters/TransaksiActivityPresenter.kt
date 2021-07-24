@@ -42,7 +42,7 @@ class TransaksiActivityPresenter(v: TransaksiContract.TransaksiView?) : Transaks
                         view?.hideLoading()
                     }
                 }else{
-                    view?.showToast(response.message())
+                    view?.showToast("Anda sudah membayar restribusi bulan ini")
                     view?.hideLoading()
                 }
             }

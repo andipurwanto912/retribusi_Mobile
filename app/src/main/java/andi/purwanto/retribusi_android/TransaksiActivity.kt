@@ -20,16 +20,6 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
     private lateinit var binding : ActivityTransaksiBinding
     private var presenter : TransaksiContract.TransaksiPresenter? = null
 
-//    private val bulan = MutableLiveData<String>()
-////    private val nik = MutableLiveData<String>()
-////    private val nama_lengkap = MutableLiveData<String>()
-//    private val jml_bayar = MutableLiveData<String>()
-////    private val alamat = MutableLiveData<String>()
-//    private val isValidLiveData = MediatorLiveData<Boolean>().apply { MediatorLiveData<Boolean>
-//        addSource(bulan){ email ->
-//            val jml_bayar = jml_bayar.value
-//            this.value = validateForm(bulan, jml_bayar)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransaksiBinding.inflate(layoutInflater)
@@ -44,7 +34,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
     private fun validate(){
         if (binding.etBulan.text.toString().isEmpty()){
-//            binding.errorTanggal.text = "Bulan harus diisi"
+            binding.etBulan.error
         }
     }
 

@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.LoginView {
                     showToast("Password must be 8 characters or more")
                 }
             }else{
-                showToast("Please fill all forms first")
+                showToast("isi kolom yang ada")
             }
         }
 
