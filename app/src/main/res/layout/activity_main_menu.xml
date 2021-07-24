@@ -119,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:text="Masyarakat"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -155,6 +156,7 @@
                     android:layout_marginBottom="8dp"
                     android:fontFamily="serif"
                     android:text="Seri"
+                    android:textStyle="bold"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -171,7 +173,7 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_bayar"
+                android:id="@+id/btn_about"
                 android:layout_width="0dp"
                 android:layout_height="126dp"
                 android:layout_margin="10dp"
@@ -179,7 +181,7 @@
                 android:background="@drawable/bg_button">
 
                 <ImageView
-                    android:id="@+id/bayar"
+                    android:id="@+id/about"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -188,7 +190,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/cashpayment" />
+                    app:srcCompat="@mipmap/aboyrr" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -197,9 +199,10 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="serif"
-                    android:text="Bayar Retribusi"
+                    android:text="About"
                     android:textColor="#000000"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.483"
@@ -235,6 +238,7 @@
                     android:layout_marginBottom="8dp"
                     android:fontFamily="serif"
                     android:text="Scan Barcode"
+                    android:textStyle="bold"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -278,6 +282,7 @@
                     android:fontFamily="serif"
                     android:text="Riwayat"
                     android:textColor="#000000"
+                    android:textStyle="bold"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/riwayat"
                     app:layout_constraintStart_toStartOf="@+id/riwayat"
@@ -311,6 +316,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="serif"
                     android:text="Profile"
+                    android:textStyle="bold"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/profile"

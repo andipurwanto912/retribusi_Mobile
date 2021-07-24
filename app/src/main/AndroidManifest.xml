@@ -4,17 +4,18 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/truck"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/truck"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BarcodeActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".BarcodeActivity" />
         <activity android:name=".BerhasilActivity" />
         <activity android:name=".SeriActivity" />
         <activity android:name=".RiwayatActivity" />

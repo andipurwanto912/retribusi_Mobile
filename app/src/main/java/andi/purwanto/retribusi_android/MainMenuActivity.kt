@@ -48,8 +48,8 @@ class MainMenuActivity : AppCompatActivity(){
             startActivity(Intent(this@MainMenuActivity, MasyarakatActivity::class.java))
         }
 
-        binding.btnBayar.setOnClickListener {
-            startActivity(Intent(this@MainMenuActivity, TransaksiActivity::class.java))
+        binding.btnAbout.setOnClickListener {
+            startActivity(Intent(this@MainMenuActivity, AboutActivity::class.java))
         }
 
         binding.btnProfile.setOnClickListener {

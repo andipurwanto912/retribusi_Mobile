@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Retribusi</string>
+    <string name="app_name">Retribusi Sampah Kota Tegal</string>
     <string name="masyarakat">DATA MASYARAKAT</string>
     <string name="seri">DATA SERI</string>
     <string name="riwayatjudul">RIWAYAT</string>
 
     <string name="subjudul">Silakan Login dengan email dan password yang sudah didaftar oleh admin/petugas Hidup Kota Tegal</string>
-    <string name="no_akun">Belum punya akun? Silakan Hubungin admin/petugas Dinas Lingkungan Hidup</string>
+    <string name="no_akun">Lupa Password? Silakan Hubungin admin/petugas Dinas Lingkungan Hidup</string>
     <string-array name="kelurahan">
-        <!--        <item>Pilih Kelurahan</item>-->
+        <!--<item>Pilih Kelurahan</item>-->
         <item>Kejambon</item>
         <item>Mangkukusuman</item>
         <item>Mintaragen</item>
