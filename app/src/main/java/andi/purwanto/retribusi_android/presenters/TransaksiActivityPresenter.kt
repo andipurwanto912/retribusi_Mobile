@@ -2,6 +2,7 @@ package andi.purwanto.retribusi_android.presenters
 
 import andi.purwanto.retribusi_android.contracts.TransaksiContract
 import andi.purwanto.retribusi_android.models.Masyarakat
+import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.responses.WrappedListResponse
 import andi.purwanto.retribusi_android.responses.WrappedResponse
 import andi.purwanto.retribusi_android.utilities.APIClient
@@ -76,6 +77,28 @@ class TransaksiActivityPresenter(v: TransaksiContract.TransaksiView?) : Transaks
             override fun onFailure(call: Call<WrappedListResponse<Masyarakat>>, t: Throwable) {
                 view?.showToast("Tidak bisa koneksi ke server")
                 println(t.message)
+            }
+
+        })
+    }
+
+    override fun getSeri(token: String, rsapikey: String) {
+        val request = apiService.getSeri(token, rsapikey)
+        request.enqueue(object :  Callback<WrappedListResponse<Seri>> {
+            override fun onResponse(
+                call: Call<WrappedListResponse<Seri>>,
+                response: Response<WrappedListResponse<Seri>>
+            ) {
+                if(response.isSuccessful){
+                    val body = response.body()
+                    if(body != null){
+                        view?.attachSeri(body.data)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<WrappedListResponse<Seri>>, t: Throwable) {
+                view?.showToast("Tidak bisa koneksi ke server")
             }
 
         })

@@ -54,7 +54,7 @@
                 android:ems="10"
                 android:fontFamily="serif"
                 android:hint="masukan bulan/tahun (072021)"
-                android:inputType="number"
+                android:inputType="datetime"
                 android:padding="10dp"
                 android:paddingLeft="10dp" />
 

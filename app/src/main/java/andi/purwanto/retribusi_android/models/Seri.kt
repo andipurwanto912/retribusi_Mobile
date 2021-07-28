@@ -10,5 +10,8 @@ data class Seri (
     @SerializedName("seri") var seri : String? = null,
     @SerializedName("jenis_retribusi") var jenis_retribusi : String? = null,
     @SerializedName("tagihan") var tagihan : String? = null,
-
-    ) : Parcelable
+) : Parcelable {
+    override fun toString(): String {
+        return seri!!;
+    }
+}

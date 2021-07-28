@@ -43,7 +43,7 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginView) : LoginActivit
                     view?.hideLoading()
                 }else{
                     view?.hideLoading()
-                    view?.showToast("Email dan Password Tidak Terdaftar")
+                    view?.showToast("Email atau Password Tidak Terdaftar")
                 }
             }
         })

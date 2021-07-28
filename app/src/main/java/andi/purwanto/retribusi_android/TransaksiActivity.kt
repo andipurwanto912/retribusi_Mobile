@@ -3,6 +3,7 @@ package andi.purwanto.retribusi_android
 import andi.purwanto.retribusi_android.contracts.TransaksiContract
 import andi.purwanto.retribusi_android.databinding.ActivityTransaksiBinding
 import andi.purwanto.retribusi_android.models.Masyarakat
+import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.presenters.TransaksiActivityPresenter
 import andi.purwanto.retribusi_android.utilities.Constants
 import android.content.Intent
@@ -19,6 +20,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
     private lateinit var binding : ActivityTransaksiBinding
     private var presenter : TransaksiContract.TransaksiPresenter? = null
+    private var seriMasyarakat : String = "";
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +28,6 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         setupSpinner()
         presenter = TransaksiActivityPresenter(this)
         setupSpinnerKec()
-        setupSpinnerSeri()
         setContentView(binding.root)
         doSave()
         BackMainMenuActivity()
@@ -51,20 +52,25 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
     private fun doSave(){
         binding.btnTransaksi.setOnClickListener {
-            showLoading()
-            validate()
-            val basicAtuh = Constants.BASIC_AUTH
-            val token = Constants.getToken(this)
-            val bulan = binding.etBulan.text.toString()
-            val nik = binding.etNik.text.toString()
-            val nama_lengkap = binding.etName.text.toString()
-            val alamat = binding.etAlamat.text.toString()
-            val jml_bayar = binding.etBayar.text.toString()
-            val kelurahan = binding.spinnerKelurahan.selectedItem.toString()
-            val kecamatan = binding.spinnerKecamatan.selectedItem.toString()
-            val seri = binding.spinnerSeri.selectedItem.toString()
+            if(binding.etBulan.text.isEmpty()){
+                Toast.makeText(this@TransaksiActivity, "Isikan form bulan tahun terlebih dahulu", Toast.LENGTH_LONG)
+                    .show()
+            }else{
+                showLoading()
+                validate()
+                val basicAtuh = Constants.BASIC_AUTH
+                val token = Constants.getToken(this)
+                val bulan = binding.etBulan.text.toString()
+                val nik = binding.etNik.text.toString()
+                val nama_lengkap = binding.etName.text.toString()
+                val alamat = binding.etAlamat.text.toString()
+                val jml_bayar = binding.etBayar.text.toString()
+                val kelurahan = binding.spinnerKelurahan.selectedItem.toString()
+                val kecamatan = binding.spinnerKecamatan.selectedItem.toString()
+                val seri = binding.spinnerSeri.selectedItem.toString()
 
-            presenter?.postTransaksi(basicAtuh, token, bulan, nik, nama_lengkap, alamat, kelurahan, kecamatan, seri, jml_bayar)
+                presenter?.postTransaksi(basicAtuh, token, bulan, nik, nama_lengkap, alamat, kelurahan, kecamatan, seri, jml_bayar)
+            }
         }
     }
 
@@ -82,14 +88,6 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         ))
 
         binding.spinnerKecamatan.adapter = spinnerKecamatanAdapter
-    }
-
-    private fun setupSpinnerSeri(){
-        val spinnerSeriAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
-            R.array.seri
-        ))
-
-        binding.spinnerSeri.adapter = spinnerSeriAdapter
     }
 
     private fun BackMainMenuActivity() {
@@ -121,19 +119,38 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
             val spinnerKelurahanAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
                 R.array.kelurahan
             ))
-            val spinnerSeriAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
-                R.array.seri
-            ))
+
             val selectedKelurahan = spinnerKelurahanAdapter.getPosition(masyarakat[0].kelurahan)
             binding.spinnerKelurahan.setSelection(selectedKelurahan)
 
-            val selectedSeri = spinnerSeriAdapter.getPosition(masyarakat[0].seri)
-            binding.spinnerSeri.setSelection(selectedSeri)
 
             binding.etNik.setText(masyarakat[0].nik)
             binding.etName.setText(masyarakat[0].nama_lengkap)
             binding.etAlamat.setText(masyarakat[0].alamat)
+            seriMasyarakat = masyarakat[0].seri.toString()
+        }
+    }
 
+    private fun getSeri(){
+        val token = Constants.getToken(this@TransaksiActivity)
+        presenter?.getSeri(Constants.BASIC_AUTH, token)
+
+    }
+
+
+    override fun attachSeri(series: List<Seri>) {
+        if(getItScan()){
+            val spinnerSeriAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, series)
+            binding.spinnerSeri.adapter = spinnerSeriAdapter
+
+            for(seri in series.indices){
+                if(series[seri].seri == seriMasyarakat){
+                    binding.spinnerSeri.setSelection(seri)
+                }
+            }
+
+            val objectSeries = binding.spinnerSeri.selectedItem as Seri
+            binding.etBayar.setText(objectSeries.tagihan)
         }
     }
 
@@ -151,6 +168,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
     override fun onResume() {
         super.onResume()
         getData()
+        getSeri()
     }
 
     override fun onDestroy() {
