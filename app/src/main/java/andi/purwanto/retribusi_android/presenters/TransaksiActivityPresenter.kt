@@ -6,6 +6,7 @@ import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.responses.WrappedListResponse
 import andi.purwanto.retribusi_android.responses.WrappedResponse
 import andi.purwanto.retribusi_android.utilities.APIClient
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,7 +44,12 @@ class TransaksiActivityPresenter(v: TransaksiContract.TransaksiView?) : Transaks
                         view?.hideLoading()
                     }
                 }else{
-                    view?.showToast("Anda sudah membayar restribusi bulan ini")
+//                    view?.showToast()
+                    if(response.code()== 403){
+                        view?.showToast("Anda sudah membayar bulan ini")
+                    }else{
+                        view?.showToast("NIK tidak valid!")
+                    }
                     view?.hideLoading()
                 }
             }
