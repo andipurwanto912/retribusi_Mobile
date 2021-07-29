@@ -54,16 +54,11 @@
                 android:ems="10"
                 android:fontFamily="serif"
                 android:hint="masukan bulan/tahun (072021)"
-                android:inputType="datetime"
+                android:inputType="number"
                 android:padding="10dp"
                 android:paddingLeft="10dp" />
 
         </androidx.cardview.widget.CardView>
-<!--        <TextView-->
-<!--            android:id="@+id/errorTanggal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:textColor="@android:color/holo_red_light"-->
-<!--            android:layout_height="wrap_content"/>-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -80,6 +75,8 @@
                 android:fontFamily="serif"
                 android:hint="masukan nik (332xxxxxxxx)"
                 android:inputType="number"
+                android:enabled="false"
+                android:textColor="@color/black"
                 android:padding="10dp"
                 android:paddingLeft="10dp" />
         </androidx.cardview.widget.CardView>
@@ -100,6 +97,8 @@
                 android:hint="masukan nama warga"
                 android:inputType="textPersonName"
                 android:padding="10dp"
+                android:textColor="@color/black"
+                android:enabled="false"
                 android:paddingLeft="10dp" />
         </androidx.cardview.widget.CardView>
 
@@ -119,6 +118,8 @@
                 android:hint="masukan alamat"
                 android:inputType="textPersonName"
                 android:padding="10dp"
+                android:textColor="@color/black"
+                android:enabled="false"
                 android:paddingLeft="10dp" />
         </androidx.cardview.widget.CardView>
 
@@ -131,7 +132,8 @@
             <Spinner
                 android:id="@+id/spinnerKecamatan"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                />
 
         </RelativeLayout>
 
@@ -158,45 +160,7 @@
                 android:id="@+id/spinnerSeri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
         </RelativeLayout>
-
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="10dp">-->
-
-        <!--            <EditText-->
-        <!--                android:id="@+id/et_kelurahan"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="50dp"-->
-        <!--                android:background="@drawable/ic_form"-->
-        <!--                android:drawableStart="@drawable/ic_baseline_home_work_24"-->
-        <!--                android:ems="10"-->
-        <!--                android:fontFamily="serif"-->
-        <!--                android:hint="masukan kelurahan"-->
-        <!--                android:inputType="textPersonName"-->
-        <!--                android:padding="10dp"-->
-        <!--                android:paddingLeft="10dp" />-->
-        <!--        </androidx.cardview.widget.CardView>-->
-
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="10dp">-->
-
-        <!--            <EditText-->
-        <!--                android:id="@+id/et_kecamatan"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="50dp"-->
-        <!--                android:background="@drawable/ic_form"-->
-        <!--                android:drawableStart="@drawable/ic_baseline_location_city_24"-->
-        <!--                android:ems="10"-->
-        <!--                android:fontFamily="serif"-->
-        <!--                android:hint="masukan kecamatan"-->
-        <!--                android:inputType="textPersonName"-->
-        <!--                android:padding="10dp" />-->
-        <!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="250dp"
@@ -214,11 +178,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_form"
                 android:ems="10"
+                android:textColor="@color/black"
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
                 android:hint="Rp. 00000000"
                 android:inputType="number"
                 android:padding="10dp"
+                android:enabled="false"
                 />
         </androidx.cardview.widget.CardView>
 
