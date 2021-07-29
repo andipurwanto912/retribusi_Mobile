@@ -45,7 +45,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="serif"
         android:gravity="center"
-        android:text="Selamat Datang"
+        android:text="@string/welcome"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -72,60 +72,79 @@
         app:layout_constraintTop_toBottomOf="@+id/topText"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutemail"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
-        android:drawableStart="@drawable/ic_baseline_email_24"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="masukan email"
-        android:inputType="textEmailAddress"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_password"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
-        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="masukan password"
-        android:inputType="textPassword"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutemail"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_masuk"
-        android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_bottom"
         android:fontFamily="serif"
-        android:text="Masuk"
+        android:text="@string/login"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutpassword" />
 
     <TextView
         android:id="@+id/textView3"
@@ -137,7 +156,7 @@
         android:fontFamily="serif"
         android:text="@string/no_akun"
         android:textAlignment="center"
-        android:textSize="10sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
@@ -159,15 +178,14 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:autoText="true"
-        android:text="PETUGAS"
+        android:text="@string/petugas"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

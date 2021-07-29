@@ -37,7 +37,7 @@
         android:fontFamily="serif"
         android:gravity="center"
         android:textColor="@color/black"
-        android:text="PROFILE USER"
+        android:text="@string/profileuser"
         android:textStyle="bold"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
@@ -84,7 +84,7 @@
                     android:autoText="false"
                     android:fontFamily="serif"
                     android:gravity="center|fill_horizontal"
-                    android:text="andi purwanto"
+                    android:hint="@string/namauser"
                     android:textAlignment="gravity"
                     android:textColor="#000000"
                     android:textSize="20sp" />
@@ -120,7 +120,7 @@
                     android:layout_marginStart="60dp"
                     android:fontFamily="serif"
                     android:gravity="center|fill_horizontal"
-                    android:text="andipurwanto912@gmail.com"
+                    android:hint="@string/emailuser"
                     android:textColor="#000000"
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>
@@ -151,7 +151,7 @@
                     android:layout_width="295dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="60dp"
-                    android:text="081234567890"
+                    android:hint="@string/nohp"
                     android:gravity="center|fill_horizontal"
                     android:textColor="#000000"
                     android:textSize="20sp" />
@@ -167,9 +167,9 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/round_bottom"
             android:fontFamily="serif"
-            android:text="KELUAR"
+            android:text="@string/logout"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 

@@ -1,8 +1,40 @@
 <resources>
     <string name="app_name">Retribusi Sampah Kota Tegal</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="dlh">Dinas Lingkungan Hidup</string>
+    <string name="datamasyarakat">MASYARAKAT</string>
+    <string name="dataseri">SERI</string>
+    <string name="scan">SCAN BARCODE</string>
     <string name="masyarakat">DATA MASYARAKAT</string>
     <string name="seri">DATA SERI</string>
-<string name="about">ABOUT</string>
+    <string name="riwayat">RIWAYAT</string>
+    <string name="profile">PROFILE</string>
+    <string name="profileuser">PROFILE USER</string>
+    <string name="retribusi">RETRIBUSI SAMPAH</string>
+    <string name="tentang"> Retribusi merupakan pungutan yang harus dibayar oleh pengguna atau fasilitas kepada pengelola sebagai syarat menggunakan fasilitas tersebut. Salah satu jenis retribusi yaitu retribusi sampah. Retribusi sampah merupakan pungutan yang harus dibayar atas pengelolaan persampahan dan kebersihan di Daerah. Retribusi sampah telah diterapkan di Kota Tegal yang telah diatur dalam perwali nomor 31 tahun 2012 tentang Petunjuk Pelaksanaan Peraturan Daerah Kota Tegal Nomor 1 tahun 2012 Tentang Retribusi Jasa Umum Jenis Retribusi  Pelayanan Persampahan/Kebersihan.
+    Dinas Lingkungan Hidup (DLH) merupakan perangkat daerah yang bertugas untuk menjalankan urusan lingkungan hidup. Untuk menjalankan urusannya, DLH disusun dengan struktur organisasi yang ditetapkan dalam Peraturan Walikota Tegal Nomor 18 Tahun 2016 tentang Susunan Organisasi, Kedudukan, Tugas, Fungsi dan Tata Kerja Dinas Daerah Kota Tegal dan rincian tugas dan fungsi yang dijabarkan dalam Peraturan Walikota Tegal Nomor 26 Tahun 2016 tentang Penjabaran Tugas, Fungsi dan Tata Kerja Dinas Daerah Kota Tegal.
+    </string>
+    <string name="login">MASUK</string>
+    <string name="menu">MENU</string>
+    <string name="logout">KELUAR</string>
+    <string name="petugas">PETUGAS</string>
+    <string name="email">masukan email</string>
+    <string name="nohp">088888888888</string>
+    <string name="namauser">nama user</string>
+    <string name="emailuser">useremail@gmail.com</string>
+    <string name="password">masukan password</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="bulan">masukan bulantahun (122021)</string>
+    <string name="nik">masukan nik</string>
+    <string name="pembayaran">PEMBAYARAN</string>
+    <string name="rincian">RINCIAN PEMBAYARAN</string>
+    <string name="namabayar">nama masyarakat</string>
+    <string name="namamasy">masukan nama masyarakat</string>
+    <string name="alamat">masukan alamat lengkap</string>
+    <string name="bayar">BAYAR</string>
+    <string name="back">BACK HOME</string>
+    <string name="rp">Rp. 00000</string>
+    <string name="about">ABOUT</string>
     <string name="rs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="riwayatjudul">RIWAYAT</string>
     <string name="subjudul">Silakan Login dengan email dan password yang sudah didaftar oleh admin/petugas Hidup Kota Tegal</string>

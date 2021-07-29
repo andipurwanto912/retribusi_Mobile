@@ -53,7 +53,7 @@
                 android:drawableStart="@drawable/ic_baseline_calendar_today_24"
                 android:ems="10"
                 android:fontFamily="serif"
-                android:hint="masukan bulan/tahun (072021)"
+                android:hint="@string/bulan"
                 android:inputType="number"
                 android:padding="10dp"
                 android:paddingLeft="10dp" />
@@ -73,7 +73,7 @@
                 android:drawableStart="@drawable/ic_baseline_contacts_24"
                 android:ems="10"
                 android:fontFamily="serif"
-                android:hint="masukan nik (332xxxxxxxx)"
+                android:hint="@string/nik"
                 android:inputType="number"
                 android:enabled="false"
                 android:textColor="@color/black"
@@ -94,7 +94,7 @@
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:ems="10"
                 android:fontFamily="serif"
-                android:hint="masukan nama warga"
+                android:hint="@string/namamasy"
                 android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -115,7 +115,7 @@
                 android:drawableStart="@drawable/ic_baseline_home_24"
                 android:ems="10"
                 android:fontFamily="serif"
-                android:hint="masukan alamat"
+                android:hint="@string/alamat"
                 android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -181,7 +181,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="serif"
                 android:gravity="clip_horizontal|center"
-                android:hint="Rp. 00000000"
+                android:hint="@string/rp"
                 android:inputType="number"
                 android:padding="10dp"
                 android:enabled="false"
@@ -200,10 +200,10 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
                 android:fontFamily="serif"
-                android:text="Bayar"
+                android:text="@string/bayar"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -221,9 +221,9 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:fontFamily="serif"
                 android:textStyle="bold"
-                android:text="BACK HOME"
+                android:text="@string/back"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -234,7 +234,7 @@
         android:background="@drawable/ic_menu"
         android:fontFamily="serif"
         android:gravity="center"
-        android:text="PEMBAYARAN"
+        android:text="@string/pembayaran"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
