@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:viewBindingIgnore="true"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    tools:viewBindingIgnore="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -36,10 +35,10 @@
         android:background="@drawable/ic_menu"
         android:fontFamily="serif"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="@string/profileuser"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,8 +150,8 @@
                     android:layout_width="295dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="60dp"
-                    android:hint="@string/nohp"
                     android:gravity="center|fill_horizontal"
+                    android:hint="@string/nohp"
                     android:textColor="#000000"
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>

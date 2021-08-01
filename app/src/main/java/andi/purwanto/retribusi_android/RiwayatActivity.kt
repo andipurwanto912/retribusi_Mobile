@@ -3,14 +3,13 @@ package andi.purwanto.retribusi_android
 import andi.purwanto.retribusi_android.adapters.RiwayatActivityAdapater
 import andi.purwanto.retribusi_android.contracts.RiwayatActivityContract
 import andi.purwanto.retribusi_android.databinding.ActivityRiwayatBinding
-import andi.purwanto.retribusi_android.databinding.ActivitySeriBinding
 import andi.purwanto.retribusi_android.models.Riwayat
 import andi.purwanto.retribusi_android.presenters.RiwayatActivityPresenter
 import andi.purwanto.retribusi_android.utilities.Constants
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 
 class RiwayatActivity : AppCompatActivity(), RiwayatActivityContract.RiwayatView {

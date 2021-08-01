@@ -22,26 +22,13 @@ class MainMenuActivity : AppCompatActivity(){
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         checkLogin()
-//        setContentView(R.layout.activity_main_menu)
-
-//        imageViewProfile = findViewById(R.id.profile)
-//        imageViewProfile.setOnClickListener(this)
         pindahActivity()
     }
 
-//    override fun onClick(v: View) {
-//        when(v.id){
-//            R.id.profile->{
-//                val intenProfileActivity = Intent(this@MainMenuActivity, ProfileActivity::class.java)
-//                startActivity(intenProfileActivity)
-//            }
-//        }
-//    }
 
     private fun pindahActivity(){
         binding.btnBarcode.setOnClickListener {
             startActivity(Intent(this@MainMenuActivity, BarcodeActivity::class.java))
-//            startActivity(Intent(this@MainMenuActivity, Barco))
         }
 
         binding.btnMasyarakat.setOnClickListener {

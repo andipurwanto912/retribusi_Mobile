@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Masyarakat (
-    @SerializedName("id_masy") var id_masy : String? = null,
+    @SerializedName("id_masy") var id_masy : Int? = null,
     @SerializedName("nik") var nik : String? = null,
     @SerializedName("nama_lengkap") var nama_lengkap : String? = null,
     @SerializedName("tempat_lahir") var tempat_lahir : String? = null,

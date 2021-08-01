@@ -2,8 +2,10 @@ package andi.purwanto.retribusi_android
 
 import andi.purwanto.retribusi_android.databinding.ActivityBerhasilBinding
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import java.text.NumberFormat
+import java.util.*
 
 class BerhasilActivity : AppCompatActivity() {
 
@@ -28,8 +30,13 @@ class BerhasilActivity : AppCompatActivity() {
     private fun BackMainMenuActivity() {
         binding.backMenu.setOnClickListener {
             startActivity(Intent(this@BerhasilActivity, MainMenuActivity::class.java))
-//            startActivity(Intent(this@MainMenuActivity, Barco))
             finishAffinity()
         }
     }
+
+//    private fun formatRupiah(number: Double): String? {
+//        val localeID = Locale("in", "ID")
+//        val formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(localeID)
+//        return formatRupiah.format(number)
+//    }
 }

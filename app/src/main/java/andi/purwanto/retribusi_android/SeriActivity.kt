@@ -6,10 +6,10 @@ import andi.purwanto.retribusi_android.databinding.ActivitySeriBinding
 import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.presenters.SeriActivityPresenter
 import andi.purwanto.retribusi_android.utilities.Constants
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 
 class SeriActivity : AppCompatActivity(), SeriActivityContract.SeriView {

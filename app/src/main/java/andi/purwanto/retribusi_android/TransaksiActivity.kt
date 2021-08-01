@@ -7,20 +7,18 @@ import andi.purwanto.retribusi_android.models.Seri
 import andi.purwanto.retribusi_android.presenters.TransaksiActivityPresenter
 import andi.purwanto.retribusi_android.utilities.Constants
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_transaksi.*
 
 class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
-    private lateinit var binding : ActivityTransaksiBinding
-    private var presenter : TransaksiContract.TransaksiPresenter? = null
-    private var seriMasyarakat : String = "";
+    private lateinit var binding: ActivityTransaksiBinding
+    private var presenter: TransaksiContract.TransaksiPresenter? = null
+    private var seriMasyarakat: String = "";
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,16 +31,16 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         BackMainMenuActivity()
     }
 
-    private fun validate(){
-        if (binding.etBulan.text.toString().isEmpty()){
+    private fun validate() {
+        if (binding.etBulan.text.toString().isEmpty()) {
             binding.etBulan.error
         }
     }
 
-    private fun getItScan() : Boolean = intent.getBooleanExtra("ITS_SCAN", false)
+    private fun getItScan(): Boolean = intent.getBooleanExtra("ITS_SCAN", false)
 
-    private fun getData(){
-        if(getItScan()){
+    private fun getData() {
+        if (getItScan()) {
             val nik = intent.getStringExtra("NIK")
             val basicAuth = Constants.BASIC_AUTH
             val token = Constants.getToken(this)
@@ -50,12 +48,16 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         }
     }
 
-    private fun doSave(){
+    private fun doSave() {
         binding.btnTransaksi.setOnClickListener {
-            if(binding.etBulan.text.isEmpty()){
-                Toast.makeText(this@TransaksiActivity, "Isikan form bulan tahun terlebih dahulu", Toast.LENGTH_LONG)
+            if (binding.etBulan.text.isEmpty()) {
+                Toast.makeText(
+                    this@TransaksiActivity,
+                    "Isikan form bulan tahun terlebih dahulu",
+                    Toast.LENGTH_LONG
+                )
                     .show()
-            }else{
+            } else {
                 showLoading()
                 validate()
                 val basicAtuh = Constants.BASIC_AUTH
@@ -69,23 +71,38 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
                 val kecamatan = binding.spinnerKecamatan.selectedItem.toString()
                 val seri = binding.spinnerSeri.selectedItem.toString()
 
-                presenter?.postTransaksi(basicAtuh, token, bulan, nik, nama_lengkap, alamat, kelurahan, kecamatan, seri, jml_bayar)
+                presenter?.postTransaksi(
+                    basicAtuh,
+                    token,
+                    bulan,
+                    nik,
+                    nama_lengkap,
+                    alamat,
+                    kelurahan,
+                    kecamatan,
+                    seri,
+                    jml_bayar
+                )
             }
         }
     }
 
-    private fun setupSpinner(){
-        val spinnerKelurahanAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
-            R.array.kelurahan
-        ))
+    private fun setupSpinner() {
+        val spinnerKelurahanAdapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
+                R.array.kelurahan
+            )
+        )
 
         binding.spinnerKelurahan.adapter = spinnerKelurahanAdapter
     }
 
-    private fun setupSpinnerKec(){
-        val spinnerKecamatanAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
-            R.array.kecamatan
-        ))
+    private fun setupSpinnerKec() {
+        val spinnerKecamatanAdapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
+                R.array.kecamatan
+            )
+        )
 
         binding.spinnerKecamatan.adapter = spinnerKecamatanAdapter
     }
@@ -115,10 +132,12 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
     }
 
     override fun fill(masyarakat: List<Masyarakat>) {
-        if(getItScan()){
-            val spinnerKelurahanAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
-                R.array.kelurahan
-            ))
+        if (getItScan()) {
+            val spinnerKelurahanAdapter = ArrayAdapter(
+                this, android.R.layout.simple_spinner_dropdown_item, resources.getStringArray(
+                    R.array.kelurahan
+                )
+            )
 
             val selectedKelurahan = spinnerKelurahanAdapter.getPosition(masyarakat[0].kelurahan)
             binding.spinnerKelurahan.setSelection(selectedKelurahan)
@@ -131,7 +150,7 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
         }
     }
 
-    private fun getSeri(){
+    private fun getSeri() {
         val token = Constants.getToken(this@TransaksiActivity)
         presenter?.getSeri(Constants.BASIC_AUTH, token)
 
@@ -139,12 +158,13 @@ class TransaksiActivity : AppCompatActivity(), TransaksiContract.TransaksiView {
 
 
     override fun attachSeri(series: List<Seri>) {
-        if(getItScan()){
-            val spinnerSeriAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, series)
+        if (getItScan()) {
+            val spinnerSeriAdapter =
+                ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, series)
             binding.spinnerSeri.adapter = spinnerSeriAdapter
 
-            for(seri in series.indices){
-                if(series[seri].seri == seriMasyarakat){
+            for (seri in series.indices) {
+                if (series[seri].seri == seriMasyarakat) {
                     binding.spinnerSeri.setSelection(seri)
                 }
             }
